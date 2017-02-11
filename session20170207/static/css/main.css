@@ -1,0 +1,26 @@
+/* css styles */
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color:#5a8ee2;
+}
+
+#main {
+    padding:50px;
+}
+
+input[type='text'] {
+    border-radius:5px;
+    width:150px;
+    height:20px;
+}
+
+button {
+    cursor:pointer;
+    font-size:15px;
+    padding:5px;
+    border-radius:5px;
+    text-align:center;
+    
+    
+}

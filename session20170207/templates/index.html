@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}" />
 </head>
 <body>
     <h1>Demo Flask Weather app</h1>
@@ -13,7 +14,14 @@
         <input type="text" id="country" name="country" placeholder="Enter country.." />
         <button type="submit">Get weather</button>
     </form>
-    <div id="results"></div>
+    <div id="results">
+        {% if data %}
+        <p>
+            The weather in {{data.name}} {{data.sys.country}} is {{data.weather.0.description}} with
+            a temperature of {{data.main.temp}} &#8451;
+        </p>
+        {% endif %}
+    </div>
 
 </body>
 </html>
