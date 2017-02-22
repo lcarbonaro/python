@@ -11,22 +11,43 @@
 
     <div id="results">
         <p>IMDB Top 10 Movies</p>
-        
+        <ol>
+            {% for d in moviedata %}
+            <li>{{d.movie_title}}</li>
+            {% endfor %}
+        </ol>
     </div>
 
     <div id="results2">
         <p>Free Stuff on Craigslist</p>
-        
+        <ul>
+            {% for d in freebiedata %}
+            <li><a target="_blank" href="{{d.link}}">{{d.title}}</a></li>
+            {% endfor %}
+        </ul>
     </div>
 
     <div id="results3">
         <p>Python Jobs from Indeed.ca</p>
-        
+        <ul>
+            {% for d in jobsdata %}
+            <li><a target="_blank" href="{{d.job_link}}">{{d.job_title}}</a></li>
+            {% endfor %}
+        </ul>
+
     </div>
 
     <div id="results4">
         <p>Toronto Headlines from Twitter</p>
-        
+        <ul>
+            {% for d in tweetsdata %}
+            <li>{{d.tweet}}
+                {% if d.link %}
+                <a target="_blank" href="{{d.link}}">More</a>
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
     </div>
 
 </body>
