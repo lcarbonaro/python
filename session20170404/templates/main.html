@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+        <div>
+            <h2>Welcome to the Main Books application</h2>
+            <h3>Current list of books</h3>
+            {% for book in books %}
+                <div>
+                    Author: {{book.author}}<br />
+                    Title: {{book.title}}<br />
+                    Genre: {{book.genre}}<br />
+                    Price: {{book.price}}<br />
+                    <br />
+                </div>
+            {% endfor %}
+        </div>
+{% endblock %}
