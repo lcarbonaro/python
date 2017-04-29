@@ -28,12 +28,12 @@ def login():
 @app.route("/main")
 def main():
     # create connection to db
-    g.db = connect_db()
+    g.conn = connect_db()
     # create a cursor to db
-    conn = g.db.cursor()
+    cursor = g.conn.cursor()
     # execute a query against db
-    conn.execute("SELECT * FROM books")
-    books_data = conn.fetchall()
+    cursor.execute("SELECT * FROM books")
+    books_data = cursor.fetchall()
     
     # how do we want to display the data? In a list
     books = []
@@ -44,7 +44,7 @@ def main():
         books.append({"id":book[0], "author":book[1], "title":book[2], "genre":book[3], "price":book[4]})
         
     # close db connection
-    g.db.close()
+    g.conn.close()
     
     # pass books data to our template for use
     return render_template("main.html", books=books)
@@ -60,15 +60,15 @@ def add_book():
         genre = request.form["genre"]
         price = request.form["price"]
         
-        g.db = connect_db()
-        conn = g.db.cursor()
-        conn.execute("INSERT INTO books (author, title, genre, price) VALUES(?, ?, ?, ?)", (author, title, genre, price))
+        g.conn = connect_db()
+        cursor = g.conn.cursor()
+        cursor.execute("INSERT INTO books (author, title, genre, price) VALUES(?, ?, ?, ?)", (author, title, genre, price))
         
-        g.db.commit()
-        g.db.close()
+        g.conn.commit()
+        g.conn.close()
         msg = "Record successfully added!"
     
-    return render_template('add.html', msg=msg)
+    return render_template('add.html', message=msg)
     
 
 @app.route("/edit", methods=["GET", "POST"])
