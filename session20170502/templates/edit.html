@@ -8,7 +8,7 @@
         
         <h3>Update Book Record</h3>
             
-        <form action="{{ url_for('edit', book_id=book_record.id, author=book_record.author, title=book_record.title, genre=book_record.genre, price=book_record.price) }}" method="post">
+        <form action="{{ url_for('edit') }}" method="post">
             <input type="hidden" name="book_id" value="{{book_record.book_id}}">
             Author:<br />
             <input type="text" name="author" value="{{book_record.author}}"/><br />
