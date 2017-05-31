@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Demo Book application</title>
+    </head>
+    <body>
+
+        <h2>Welcome to the Books application</h2>
+
+        {% if 'username' in session: %}  
+        <div>Logged in as: {{ session['username'] }} &nbsp;&nbsp; <a href="{{ url_for('logout') }}">Log Out</a> </div>
+        {% endif %}
+
+        <div>            
+            {% block content %}
+            {% endblock %}
+        </div>
+    </body>
+</html>
