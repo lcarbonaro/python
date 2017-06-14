@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div>
+                
+        <p><a href="{{ url_for('main') }} ">List Books</a></p>
+        
+        <h3>Delete Book Record</h3>
+            
+        <form action="{{ url_for('delete') }}" method="post">
+            <input type="hidden" name="book_id" value="{{book_record.book_id}}">
+            Author:<br />
+            <input type="text" readonly name="author" value="{{book_record.author}}"/><br />
+            Title:<br />
+            <input type="text" readonly name="title" value="{{book_record.title}}"/><br />
+            Genre:<br />
+            <input type="text" readonly name="genre" value="{{book_record.genre}}"/><br />
+            Price:<br />
+            <input type="text" readonly name="price" value="{{book_record.price}}"/><br /><br />
+            <button type="submit">Yes, Delete This Record</button>
+        </form>
+    
+    </div> 
+{% endblock %}
