@@ -10,7 +10,7 @@ Usage notes:
 
 5. git clone https://github.com/lcarbonaro/python.git
 
-6. cd session20170221
+6. cd python/session20170221
 
 7. python flask_1.py
 
