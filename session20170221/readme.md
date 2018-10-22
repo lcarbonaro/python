@@ -4,14 +4,16 @@ Usage notes:
 
 2. make sure you have flask python package installed (pip install flask)
 
-3. make sure you have beautifulsoup python package installed (pip install bs4)
+3. make sure you have requests python package installed (pip install requests)
 
-4. cd to your projects folder
+4. make sure you have beautifulsoup python package installed (pip install bs4)
 
-5. git clone https://github.com/lcarbonaro/python.git
+5. cd to your projects folder
 
-6. cd python/session20170221
+6. git clone https://github.com/lcarbonaro/python.git
 
-7. python flask_1.py
+7. cd python/session20170221
 
-8. browse to localhost:8080/scrape
+8. python flask_1.py
+
+9. browse to localhost:8080/scrape
