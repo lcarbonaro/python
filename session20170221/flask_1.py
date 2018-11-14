@@ -33,7 +33,7 @@ def scrapeData():
     for row in rows:
         a_tag = row.find('a', {'class':'result-title'})
         title = a_tag.text.strip()
-        link = 'https://toronto.craigslist.ca' + a_tag['href']
+        link = a_tag['href']   # 'https://toronto.craigslist.ca' + a_tag['href']
         rec = {}
         rec['title'] = title
         rec['link'] = link
